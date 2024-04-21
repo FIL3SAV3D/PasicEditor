@@ -34,3 +34,4 @@ F:\Programming Projects\Game Engine\Pasic\PasicEditor\obj\Debug\net8.0-windows10
 F:\Programming Projects\Game Engine\Pasic\PasicEditor\obj\Debug\net8.0-windows10.0.22621.0\Utilities\UndoRedoView.baml
 F:\Programming Projects\Game Engine\Pasic\PasicEditor\obj\Debug\net8.0-windows10.0.22621.0\Editors\WorldEditor\GameEntityView.g.cs
 F:\Programming Projects\Game Engine\Pasic\PasicEditor\obj\Debug\net8.0-windows10.0.22621.0\Editors\WorldEditor\GameEntityView.baml
+F:\Programming Projects\Game Engine\Pasic\PasicEditor\obj\Debug\net8.0-windows10.0.22621.0\PasicEditor.sourcelink.json

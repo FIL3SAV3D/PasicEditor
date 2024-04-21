@@ -1,5 +1,6 @@
 ﻿using PasicEditor.Components;
 using PasicEditor.GameProject;
+using PasicEditor.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,19 @@ namespace PasicEditor.Editors
             var newSelection = listBox.SelectedItems.Cast<GameEntity>().ToList();
             var previousSelection = newSelection.Except(e.AddedItems.Cast<GameEntity>()).Concat(e.RemovedItems.Cast<GameEntity>()).ToList();
 
-
+            Project.UndoRedo.Add(new UndoRedoAction(
+                () => //Undo Action
+                { 
+                    listBox.UnselectAll();
+                    previousSelection.ForEach(x=>(listBox.ItemContainerGenerator.ContainerFromItem(x) as ListBoxItem).IsSelected = true);
+                },
+                () => //Redo Action
+                {
+                    listBox.UnselectAll();
+                    newSelection.ForEach(x => (listBox.ItemContainerGenerator.ContainerFromItem(x) as ListBoxItem).IsSelected = true);
+                },
+                "Selection changed"
+                ));
         }
     }
 }
