@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CShGLDqE52vl6HCOxxUR1u0a3wvokKWOe1ExWhy4WXo62QrR4TgwSXP45zxQEIHgh7520LdDTpSYQJAzsAdh+w==",
+  "success": true,
+  "projectFilePath": "F:\\Programming Projects\\Game Engine\\Pasic\\PasicEditor\\PasicEditor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kjell\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.31\\microsoft.windows.sdk.net.ref.10.0.22621.31.nupkg.sha512"
+  ],
+  "logs": []
+}

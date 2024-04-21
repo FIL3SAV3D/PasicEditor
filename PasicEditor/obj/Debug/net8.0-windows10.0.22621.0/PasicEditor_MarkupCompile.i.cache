@@ -1,0 +1,20 @@
+﻿PasicEditor
+1.0.0.0
+
+winexe
+C#
+.cs
+F:\Programming Projects\Game Engine\Pasic\PasicEditor\obj\Debug\net8.0-windows10.0.22621.0\
+PasicEditor
+none
+false
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+F:\Programming Projects\Game Engine\Pasic\PasicEditor\App.xaml
+8-593816931
+
+24591906398
+200-1299406383
+Editors\WorldEditor\GameEntityView.xaml;Editors\WorldEditor\ProjectLayoutView.xaml;Editors\WorldEditor\WorldEditorView.xaml;GameProject\NewProjectView.xaml;GameProject\OpenProjectView.xaml;GameProject\ProjectBrowserDialog.xaml;MainWindow.xaml;Utilities\UndoRedoView.xaml;
+
+False
+
