@@ -11,6 +11,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PasicEditor.GameProject
 {
     [DataContract]
@@ -168,8 +169,8 @@ namespace PasicEditor.GameProject
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                // TODO: log error
-                return string.Empty;
+                Logger.Log(MessageType.Error, $"Failed to deserialize {ProjectName}");
+                throw;
             }
         }
 
@@ -196,7 +197,8 @@ namespace PasicEditor.GameProject
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                // TODO: log error
+                Logger.Log(MessageType.Error, $"Failed to read project template");
+                throw;
             }
         }
     }
