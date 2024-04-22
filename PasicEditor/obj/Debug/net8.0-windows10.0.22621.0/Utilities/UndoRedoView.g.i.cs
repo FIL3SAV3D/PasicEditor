@@ -53,7 +53,7 @@ namespace PasicEditor.Utilities {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PasicEditor;V1.0.0.0;component/utilities/undoredoview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PasicEditor;component/utilities/undoredoview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Utilities\UndoRedoView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
