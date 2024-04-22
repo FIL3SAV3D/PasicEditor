@@ -15,7 +15,34 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Message}"/>
+                    <DockPanel ToolTip="{Binding MetaData}">
+                        <DockPanel.Style>
+                            <Style TargetType="DockPanel">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="Gray"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DockPanel.Style>
+                        <TextBlock Text="{Binding Time, StringFormat=hh:mm:ss}" Margin="5,0">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="LightGreen"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding MessageType}" Value="{x:Static local:MessageType.Warning}">
+                                            <Setter Property="Foreground" Value="#ffffbb22"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding MessageType}" Value="{x:Static local:MessageType.Error}">
+                                            <Setter Property="Foreground" Value="#ffff4455"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <TextBlock Text="{Binding Message}" TextWrapping="Wrap"/>
+                    </DockPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

@@ -23,6 +23,13 @@ namespace PasicEditor.Utilities
         public LoggerView()
         {
             InitializeComponent();
+
+            Loaded += (s, e) =>
+            {
+                Logger.Log(MessageType.Information, "Information Message");
+                Logger.Log(MessageType.Warning, "Warning Message");
+                Logger.Log(MessageType.Error, "Error Message");
+            };
         }
     }
 }
