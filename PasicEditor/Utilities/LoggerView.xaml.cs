@@ -31,5 +31,19 @@ namespace PasicEditor.Utilities
                 Logger.Log(MessageType.Error, "Error Message");
             };
         }
+
+        private void OnClear_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Logger.clear();
+        }
+
+        private void OnMessageFilter_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var filter = 0x0;
+            if (toggleInformation.IsChecked == true) filter |= (int)MessageType.Information;
+            if (toggleWarnings.IsChecked == true) filter |= (int)MessageType.Warning;
+            if (toggleErrors.IsChecked == true) filter |= (int)MessageType.Error;
+            Logger.SetMessageFilter(filter);
+        }
     }
 }
