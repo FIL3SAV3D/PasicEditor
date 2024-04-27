@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -19,6 +20,7 @@ namespace PasicEditor.GameProject
     /// </summary>
     public partial class ProjectBrowserDialog : Window
     {
+        private readonly CubicEase _easing = new CubicEase() { EasingMode = EasingMode.EaseInOut };
         public ProjectBrowserDialog()
         {
             InitializeComponent();
@@ -36,6 +38,32 @@ namespace PasicEditor.GameProject
             }
         }
 
+        private void AnimateToCreateProject()
+        {
+            var highlightAnimation = new DoubleAnimation(200, 400, new Duration(TimeSpan.FromSeconds(0.1)));
+            highlightAnimation.EasingFunction = _easing;
+            highlightAnimation.Completed += (s, e) =>
+            {
+                var animation = new ThicknessAnimation(new Thickness(0), new Thickness(-1600, 0, 0, 0), new Duration(TimeSpan.FromSeconds(0.25)));
+                animation.EasingFunction = _easing;
+                browserContent.BeginAnimation(MarginProperty, animation);
+            };
+            highlightRect.BeginAnimation(Canvas.LeftProperty, highlightAnimation);
+        }
+
+        private void AnimateToOpenProject()
+        {
+            var highlightAnimation = new DoubleAnimation(400, 200, new Duration(TimeSpan.FromSeconds(0.1)));
+            highlightAnimation.EasingFunction = _easing;
+            highlightAnimation.Completed += (s, e) =>
+            {
+                var animation = new ThicknessAnimation(new Thickness(-1600, 0, 0, 0), new Thickness(0), new Duration(TimeSpan.FromSeconds(0.25)));
+                animation.EasingFunction = _easing;
+                browserContent.BeginAnimation(MarginProperty, animation);
+            };
+            highlightRect.BeginAnimation(Canvas.LeftProperty, highlightAnimation);
+        }
+
         private void OnToggleButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender == openProjectButton) 
@@ -43,7 +71,9 @@ namespace PasicEditor.GameProject
                 if (createProjectButton.IsChecked == true) 
                 {
                     createProjectButton.IsChecked = false;
-                    browserContent.Margin = new Thickness(0);
+                    AnimateToOpenProject();
+                    openProjectView.IsEnabled = true;
+                    newProjectView.IsEnabled = false;
                 }
                 openProjectButton.IsChecked = true;
             }
@@ -52,7 +82,9 @@ namespace PasicEditor.GameProject
                 if (openProjectButton.IsChecked == true)
                 {
                     openProjectButton.IsChecked = false;
-                    browserContent.Margin = new Thickness(-800,0,0,0);
+                    AnimateToCreateProject();
+                    openProjectView.IsEnabled = false;
+                    newProjectView.IsEnabled = true;
                 }
                 createProjectButton.IsChecked = true;
             }
