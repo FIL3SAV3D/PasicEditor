@@ -1,3 +1,5 @@
 *.vs
 .vs/Pasic/v17/Browse.VC.db
 dir_to_ignore/"F:\Programming Projects\Game Engine\Pasic\.vs"
+dir_to_ignore/"F:\Programming Projects\Game Engine\Pasic\PasicEditor\obj"
+dir_to_ignore/"F:\Programming Projects\Game Engine\Pasic\PasicEditor\bin"

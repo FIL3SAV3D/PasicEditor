@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PasicEditor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0786e816b5983334112560d33f3e1535735d67c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9300232e0d8f08254fbeef2ae7526c3287709356")]
 [assembly: System.Reflection.AssemblyProductAttribute("PasicEditor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PasicEditor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
