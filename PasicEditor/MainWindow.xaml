@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:PasicEditor"
         xmlns:editors="clr-namespace:PasicEditor.Editors"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowState="Maximized"
-        Title="PasicEditor" Height="1080" Width="1920">
+        Title="PasicEditor" Height="1080" Width="1920"
+        Style="{StaticResource PasicWindowStyle}">
     <Grid>
         <editors:WorldEditorView/>
     </Grid>

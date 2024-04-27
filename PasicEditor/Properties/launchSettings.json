@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PasicEditor": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
